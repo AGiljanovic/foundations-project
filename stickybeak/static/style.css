@@ -5,12 +5,6 @@
   src: url('fonts/BebasKai-Regular.otf');
 }
 
-/* 
-
-Styling
-
- */
-
 * {
   padding: 0;
   margin: 0;
@@ -116,8 +110,8 @@ Main styles start here
 
 .hero-text {
   background: linear-gradient(
-    rgba(105, 211, 252, 0.25) 0%,
-    rgba(255, 116, 161, 0.25) 86%,
+    rgba(82, 94, 194, 0.25) 30%,
+    rgba(159, 56, 101, 0.25) 80%,
     rgba(1, 0, 0, 0.25) 100%
   );
   background-size: cover;
@@ -156,14 +150,14 @@ Main styles start here
   top: 50%;
   transform: translate(-50%, -50%);
   width: 17rem;
-  height: 25rem;
+  height: 20rem;
 }
 
 .news-container h1 {
   font-family: Bebas, sans-serif;
-  font-weight: 400;
+  font-weight: 800;
   position: absolute;
-  font-size: 12.5rem;
+  font-size: 8rem;
 }
 
 .news-container h1:nth-of-type(1) {
@@ -229,6 +223,7 @@ Main styles start here
   margin-bottom: 3rem;
 }
 
+/* Responsive on other devices */
 @media (min-width: 760px) {
   .hero-text ul li {
     visibility: visible;

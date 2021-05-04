@@ -8,7 +8,6 @@
    align-items: center;
    justify-content: center;
    flex-flow: wrap;
-   align-content: center;
 }
  .flip {
      position: relative;

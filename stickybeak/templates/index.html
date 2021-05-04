@@ -2,7 +2,8 @@
 
 {% block content %}
 
-<!-- parallax scrolleron main.html-->
+<!-- parallax scrolleron main.html // https://www.w3schools.com/howto/howto_css_parallax.asp + a combination of couple 
+of other repos like this one https://github.com/sefyudem/Parallax-Scrolling-Effect-->
 <div class="wrapper">
   <div class="parallax__group hero-container">
 
@@ -15,17 +16,10 @@
     <div class="parallax__layer person"></div>
     <div class="parallax__layer hero-text">
       <h2>Stickybeak</h2>
-      <ul>
-        <li><a href="#">Passions</a></li>
-        <li><a href="#">Goals</a></li>
-        <li><a href="#" class="btn">Get Started Now</a></li>
-      </ul>
+  
       <div class="news-container">
-        <!-- if it is not in 4 layers it looks weird-->
-        <h1></h1>
-        <h1>NEWS</h1>
         <h1>FAKE</h1>
-        <h1></h1>
+        <h1>NEWS</h1>
       </div>
     </div>
   </div>
@@ -37,6 +31,7 @@
     background="transparent"  speed="1"  style="width: 600px; height: 600px;"  loop  autoplay></lottie-player>
     <div class="text-container">
       <h2>The Fake News Rabbit Hole.</h2>
+      <!-- I do not have the energy to come up with text right now. -->
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
           ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
@@ -45,18 +40,23 @@
     </div>
   </div>
 
-<h1 style="text-align:center">How it all happens</h1><br> <br> <br> 
-<!-- card flips sourced from https://codepen.io/Aoyue/pen/pLJqgE?editors=1100-->
-<div class="cards">
-<div class="flip">
+  <!-- If I add the info-container, they stack in a single row, 
+  but then there is no background bleeding through.
+  Not really sure how to fix it so best of both worlds is in it.
+  I chose to go without the info-container for the better responsiveness. Sad.-->
+  <div class="parallax__group">
+  <h1 style="text-align:center"><br> <br> <br> How it all happens</h1><br> <br> <br> 
+  <!-- card flips sourced from https://codepen.io/Aoyue/pen/pLJqgE?editors=1100-->
+  <div class="cards">
+    <div class="flip">
     <div class="front" style="background-image: url(https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
        <h1 class="text-shadow">Confirmation bias.</hi>
     </div>
     <div class="back">
        <p>Confirmation bias refers to our favoring of information that confirms our existing beliefs. Without accounting for this bias in our thinking, we are more likely to fall for fake news if we agree with what is being said.This works the other way around as well; confirmation bias wil...</p>
     </div>
-</div>
-<div class="flip">
+      </div>
+    <div class="flip">
   <div class="front" style="background-image: url(https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
      <h1 class="text-shadow">MOUNTAIN</hi>
   </div>
@@ -64,7 +64,8 @@
      <h2>Angular</h2>
      <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
   </div>
-</div><div class="flip">
+      </div>
+    <div class="flip">
   <div class="front" style="background-image: url(https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
      <h1 class="text-shadow">MOUNTAIN</hi>
   </div>
@@ -72,7 +73,8 @@
      <h2>Angular</h2>
      <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
   </div>
-</div><div class="flip">
+      </div>
+    <div class="flip">
   <div class="front" style="background-image: url(https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
      <h1 class="text-shadow">MOUNTAIN</hi>
   </div>
@@ -80,8 +82,8 @@
      <h2>Angular</h2>
      <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
   </div>
-</div>
-<div class="flip">
+      </div>
+    <div class="flip">
   <div class="front" style="background-image: url(https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
      <h1 class="text-shadow">MOUNTAIN</hi>
   </div>
@@ -89,8 +91,8 @@
      <h2>Angular</h2>
      <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
   </div>
-</div>
-<div class="flip">
+      </div>
+    <div class="flip">
   <div class="front" style="background-image: url(https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
      <h1 class="text-shadow">MOUNTAIN</hi>
   </div>
@@ -98,16 +100,17 @@
      <h2>Angular</h2>
      <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
   </div>
-</div>
-</div>
-
+      </div>
+  </div>
+  </div>
 <!-- card flips end -->
 
-
+<!-- Parallax + info container to prevent background bleed and align image and text side to side -->
   <div class="parallax__group info-container">
     <img src="{{url_for('static', filename='concert.jpg')}}" />
     <div class="text-container">
       <h2>I would like to help.</h2>
+      <!-- Just imagine there is interesting text here -->
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
         laboris nisi ut aliquip ex ea commodo consequat. </p><br>
