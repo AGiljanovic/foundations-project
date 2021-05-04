@@ -1,58 +1,27 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Behavioral metadata -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<link rel="reset_stylesheet" href="{{ url_for('static', filename='reset.css') }}">
-	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <script type="text/javascript" src="{{ url_for('static', filename='modernizr.js') }}"></script>
-	<title>Project thing</title>
+    <title>Stickybeak</title>
+    <!-- Styles, Lottie & icons-->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='card_style.css') }}">
+  <link
+      href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
+      rel="stylesheet"/>
+
 </head>
 
-<body data-hijacking="on" data-animation="parallax">
-        <section class="cd-section visible">
-            <div>
-                <h2>test test</h2>
-            </div>
-        </section>
-    
-        <section class="cd-section">
-            <div>
-                <h2>test 2</h2>
-            </div>
-        </section>
-    
-        <section class="cd-section">
-            <div>
-                <h2>test 3</h2>
-            </div>
-        </section>
-    
-        <section class="cd-section">
-            <div>
-                <h2>test 4</h2>
-            </div>
-        </section>
-    
-        <section class="cd-section">
-            <div>
-                <h2>test 5</h2>
-            </div>
-        </section>
-    
-        <nav>
-            <ul class="cd-vertical-nav">
-                <li><a href="#0" class="cd-prev inactive">Next</a></li>
-                <li><a href="#0" class="cd-next">Prev</a></li>
-            </ul>
-        </nav> <!-- .cd-vertical-nav -->
-    
-    <!-- <script src="../js/jquery-2.1.4.js"></script>
-    <script src="../js//velocity.min.js"></script>
-    <script src="../js/velocity.ui.min.js"></script> -->
-    <script type="text/javascript" src="{{ url_for('static', filename='jquery-2.1.4.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='velocity.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='velocity.ui.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
+<body >
+  {% block content %}
+  {% endblock %}
+
+    <!-- script imports-->
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename='parallax.js') }}"></script> -->
+    <!-- <img src="{{url_for('static', filename='bg1.png')}}" /> -->
 </body>
