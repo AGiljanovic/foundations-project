@@ -24,7 +24,7 @@ of other repos like this one https://github.com/sefyudem/Parallax-Scrolling-Effe
     </div>
   </div>
 
-  <!-- Introduction bar  -->
+  <!-- Introduction bar -->
   <div class="parallax__group info-container">
     <!-- Rights of the lottie file go to Nathan Covert https://lottiefiles.com/user/112947 -->
     <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_h0JgOw.json"  
@@ -39,84 +39,94 @@ of other repos like this one https://github.com/sefyudem/Parallax-Scrolling-Effe
            mollit anim id est laborum.</p>
     </div>
   </div>
-
-  <!-- If I add the info-container, they stack in a single row, 
-  but then there is no background bleeding through.
-  Not really sure how to fix it so best of both worlds is in it.
-  I chose to go without the info-container for the better responsiveness. Sad.-->
-  <div class="parallax__group">
-  <h1 style="text-align:center"><br> <br> <br> How it all happens</h1><br> <br> <br> 
-  <!-- card flips sourced from https://codepen.io/Aoyue/pen/pLJqgE?editors=1100-->
-  <div class="cards">
-    <div class="flip">
-    <div class="front" style="background-image: url(https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
-       <h1 class="text-shadow">Confirmation bias.</hi>
-    </div>
-    <div class="back">
-       <p>Confirmation bias refers to our favoring of information that confirms our existing beliefs. Without accounting for this bias in our thinking, we are more likely to fall for fake news if we agree with what is being said.This works the other way around as well; confirmation bias wil...</p>
-    </div>
-      </div>
-    <div class="flip">
-  <div class="front" style="background-image: url(https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
-     <h1 class="text-shadow">MOUNTAIN</hi>
-  </div>
-  <div class="back">
-     <h2>Angular</h2>
-     <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
-  </div>
-      </div>
-    <div class="flip">
-  <div class="front" style="background-image: url(https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
-     <h1 class="text-shadow">MOUNTAIN</hi>
-  </div>
-  <div class="back">
-     <h2>Angular</h2>
-     <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
-  </div>
-      </div>
-    <div class="flip">
-  <div class="front" style="background-image: url(https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
-     <h1 class="text-shadow">MOUNTAIN</hi>
-  </div>
-  <div class="back">
-     <h2>Angular</h2>
-     <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
-  </div>
-      </div>
-    <div class="flip">
-  <div class="front" style="background-image: url(https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
-     <h1 class="text-shadow">MOUNTAIN</hi>
-  </div>
-  <div class="back">
-     <h2>Angular</h2>
-     <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
-  </div>
-      </div>
-    <div class="flip">
-  <div class="front" style="background-image: url(https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
-     <h1 class="text-shadow">MOUNTAIN</hi>
-  </div>
-  <div class="back">
-     <h2>Angular</h2>
-     <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
-  </div>
-      </div>
-  </div>
-  </div>
-<!-- card flips end -->
-
-<!-- Parallax + info container to prevent background bleed and align image and text side to side -->
+  
   <div class="parallax__group info-container">
-    <img src="{{url_for('static', filename='concert.jpg')}}" />
+    <!-- Confirmation bias // img credit: Thomas Charters -->
+    <img src="{{url_for('static', filename='conf_bias.png')}}" class="rounded-corners"/>
     <div class="text-container">
-      <h2>I would like to help.</h2>
+      <h2>Confirmation bias.</h2>
       <!-- Just imagine there is interesting text here -->
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
         laboris nisi ut aliquip ex ea commodo consequat. </p><br>
-      <a href="#" class="btn">Read more about the project Stickybeak</a>
     </div>
   </div>
 
+  <div class="parallax__group info-container">
+    <!-- Illusory truth effect // img credit: Giorgio Trovato -->
+    <img src="{{url_for('static', filename='illusion.png')}}" class="rounded-corners"/>
+    <div class="text-container">
+      <h2>Illusory truth effect.</h2>
+      <!-- Just imagine there is interesting text here -->
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+        laboris nisi ut aliquip ex ea commodo consequat. </p><br>
+    </div>
+  </div>
+
+  <div class="parallax__group info-container">
+    <!-- Motivated reasoning // img credit: Dalton Caraway -->
+    <img src="{{url_for('static', filename='flag.png')}}" class="rounded-corners"/>
+    <div class="text-container">
+      <h2>Motivated reasoning.</h2>
+      <!-- Just imagine there is interesting text here -->
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+        laboris nisi ut aliquip ex ea commodo consequat. </p><br>
+    </div>
+  </div>
+
+  <div class="parallax__group info-container">
+    <!-- Motivated reasoning // img credit: Miguel Henriques -->
+    <img src="{{url_for('static', filename='fluency.png')}}" class="rounded-corners"/>
+    <div class="text-container">
+      <h2>Processing fluency.</h2>
+      <!-- Just imagine there is interesting text here -->
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+        laboris nisi ut aliquip ex ea commodo consequat. </p><br>
+    </div>
+  </div>
+
+  <div class="parallax__group info-container">
+    <!-- Social pressure // img credit: Yasin Yusuf -->
+    <img src="{{url_for('static', filename='social_pressure.png')}}" class="rounded-corners"/>
+    <div class="text-container">
+      <h2>Social pressure.</h2>
+      <!-- Just imagine there is interesting text here -->
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+        laboris nisi ut aliquip ex ea commodo consequat. </p><br>
+    </div>
+  </div>
+
+  <div class="parallax__group info-container">
+     <!-- our emotions are targeted // img credit: engin akyurt -->
+    <img src="{{url_for('static', filename='anger.png')}}" class="rounded-corners"/>
+    <div class="text-container">
+      <h2>Our emotions are targeted.</h2>
+      <!-- Just imagine there is interesting text here -->
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+        laboris nisi ut aliquip ex ea commodo consequat. </p><br>
+    </div>
+  </div>
+
+
+
+
+<!-- end end end -->
+<div class="parallax__group info-container">
+  <img src="{{url_for('static', filename='concert.jpg')}}" />
+  <div class="text-container">
+    <h2>I would like to help.</h2>
+    <!-- Just imagine there is interesting text here -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+      dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+      laboris nisi ut aliquip ex ea commodo consequat. </p><br>
+    <a href="#" class="btn">Read more about the project Stickybeak</a>
+  </div>
 </div>
+
+
 {%endblock%}

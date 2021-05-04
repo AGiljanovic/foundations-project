@@ -26,6 +26,9 @@ a {
   color: #fff;
 }
 
+img.rounded-corners {
+  border-radius: 30px;
+}
 /* 
 
 Main styles start here
