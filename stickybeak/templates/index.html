@@ -2,131 +2,217 @@
 
 {% block content %}
 
-<!-- parallax scrolleron main.html // https://www.w3schools.com/howto/howto_css_parallax.asp + a combination of couple 
-of other repos like this one https://github.com/sefyudem/Parallax-Scrolling-Effect-->
-<div class="wrapper">
-  <div class="parallax__group hero-container">
+<main class="l-main">
 
-    <!-- layers-->
-    <div class="parallax__layer sky"></div>
-    <div class="parallax__layer skyline"></div>
-    <div class="parallax__layer buildingsback"></div>
-    <div class="parallax__layer buildingsfront"></div>
-    <div class="parallax__layer buildingsmiddle"></div>
-    <div class="parallax__layer person"></div>
-    <div class="parallax__layer hero-text">
-      <h2>Stickybeak</h2>
-  
-      <div class="news-container">
-        <h1>FAKE</h1>
-        <h1>NEWS</h1>
+ <!-- START OF THE PAGE // HOME -->
+  <section class="home" id="home">
+      <div class="home_container bd-container bd-grid">
+          <div class="home_img">
+               <img src="{{url_for('static', filename='home.svg')}}" />
+          </div>
+
+          <div class="home_data">
+              <h1 class="home_title">Saying Goodbye to Fake News</h1>
+              <p class="home_description"> My goal with Stickybeak is to stop the spread of fake news, one fact at a time.</p>
+          </div>   
       </div>
+  </section>
+
+  <!-- BACKGROUND STORY SECTION -->
+  <section class="story section bd-container" id="story">
+      <div class="story_container bd-grid">
+          <div class="story_data">
+              <h2 class="section-title-center">What this project means to me and why I chose it</h2>
+              <p class="story_description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <a href="#" class="button">Read more about my story</a>
+          </div>
+
+          <div class="story_img">
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_yIZkqk.json"  
+            background="transparent"  speed="1"  style="width: 550px; height: 500px;"  loop  autoplay></lottie-player>
+          </div>
+      </div>
+  </section>
+
+  <!-- MY AUDIENCE -->
+  <section class="audience section bd-container" id="audience">
+    
+      <h2 class="section-title"> Who can benefit from using the app?</h2>
+      <div class="audience_container bd-grid">
+          <div class="audience_data">
+            <img src="{{url_for('static', filename='audience1.svg')}}" />
+              <h3 class="audience_title">The confused one </h3>
+              <span class="accessory__category"> Perhaps you are not the most comfortable with technology, and you do not yet have the idea
+                                                 how to verify information. You are not sure if the article you just read is real or not.</span>
+          </div>
+
+          <div class="audience_data">
+            <img src="{{url_for('static', filename='audience2.svg')}}" />
+              <h3 class="audience_title">The curious one</h3>
+              <span class="accessory__category"> While you do fact check sometimes, you feel like browsing through
+                                                 different articles eats up too much time, so you want a quick and handy 
+                                                 way to check things on the go. </span>
+          </div>
+
+          <div class="audience_data">
+              <img src="{{url_for('static', filename='audience3.svg')}}" />
+              <h3 class="audience_title">The collector</h3>
+              <span class="accessory__category"> While you may not fall for the fake news yourself, you  still like reading about them,
+                                                 whether it be because they are entertaining, or you want to inform
+                                                 others.</span>
+          </div>
+      </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="accessory section bd-container" id="offers">
+      <h2 class="section-title">What it offers to you</h2>
+
+      <!-- CODE ADAPTED FROM: https://github.com/bedimcode/portfolio-responsive-complete/blob/master/index.html -->
+      <div class="content">
+				<div class="grid">
+					<div class="grid__item grid__checker" >
+						<div class="product">
+                            <div class="product__bg"></div>
+							<img class="product__img" src="{{url_for('static', filename='check.png')}}" alt="img 01"/>
+							<h2 class="product__title">Help you Fact Check</h2>
+							<p class="product__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                                                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+                                                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
+                                                            anim id est laborum.</p>
+						</div>
+					</div>
+                    
+                    <div class="grid__item grid__curve" >
+						<div class="product">
+                            <div class="product__bg"></div>
+							<img class="product__img" src="{{url_for('static', filename='curve.png')}}" alt="img 01"/>
+							<h2 class="product__title">Stay Ahead of the Curve</h2>
+							<p class="product__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                                                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+                                                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
+                                                            anim id est laborum.</p>
+						</div>
+                    </div>
+                    
+					<div class="grid__item grid__information">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="{{url_for('static', filename='information.png')}}" alt="img 01"/>
+							<h2 class="product__title">In Depth Information</h2>
+							<p class="product__description">ALorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                                                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+                                                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
+                                                            anim id est laborum.</p>
+							
+						</div>
+					</div>
+					<div class="grid__item grid__source">
+						<div class="product">
+							<div class="product__bg"></div>
+                            <img class="product__img" src="{{url_for('static', filename='source.png')}}" alt="img 01"/>
+							<h2 class="product__title">Dive into the Sources</h2>
+							<p class="product__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                                                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+                                                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
+                                                            anim id est laborum.</p>
+						
+						</div>
+					</div>
+					<div class="grid__item">
+						<div class="product grid__identify">
+							<div class="product__bg"></div>
+							<img class="product__img" src="{{url_for('static', filename='identify.png')}}" alt="img 01"/>
+							<h2 class="product__title">Learn to Identify</h2>
+							<p class="product__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                                                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+                                                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
+                                                            anim id est laborum.</p>
+							
+						</div>
+					</div>
+					<div class="grid__item grid__educate">
+						<div class="product">
+							<div class="product__bg"></div>
+							<img class="product__img" src="{{url_for('static', filename='educate.png')}}" alt="img 01"/>
+							<h2 class="product__title"> Help Educate Otehrs</h2>
+							<p class="product__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                                                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+                                                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
+                                                            anim id est laborum.</p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+  </section>
+
+ <!-- NEWSLETTER -->
+  <section class="newsletter section" id="newsletter">
+      <div class="newsletter_container bd-container bd-grid">
+          <div class="newsletter_content">
+              <h2 class="section-title-center newsletter_title">Sign up for the Newsletter now</h2>
+              <p class="newsletter_description">If my project peaked your interest, sign up for the newsletter to get updates about my progress.</p>
+              <form action="">
+                  <div class="newsletter_direction">
+                      <input type="text" placeholder="Email address" class="newsletter_input">
+                      <a href="#" class="button">Send</a>
+                  </div>
+              </form>
+          </div>
+
+          <div class="newsletter_img">
+            <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_tW99ax.json"  
+            background="transparent"  speed="1"  style="width: 500px; height: 300px;"  loop  autoplay> </lottie-player>
+          </div>
+      </div>
+  </section>
+
+  <!-- FOOTER  -->
+  <footer class="footer section">
+    <div class="footer__container bd-container bd-grid">
+        <div class="footer__content">
+            <h3 class="footer__title">
+                <a href="#" class="footer__logo">Stickybeak</a>
+            </h3>
+            <p class="footer__description">Stopping the spread of fake news one fact at a time </p>
+        </div>
+
+        <div class="footer__content">
+            <h3 class="footer__title">The creator</h3>
+            <ul>
+                <li><a href="#" class="footer__link">About me</a></li>
+                <li><a href="#" class="footer__link">My mision</a></li>
+            </ul>
+        </div>
+
+        <div class="footer__content">
+            <h3 class="footer__title">Social</h3>
+            <a href="https://github.com/AGiljanovic" class="footer__social"><i class='bx bxl-github '></i></a>
+        </div>
     </div>
-  </div>
 
-  <!-- Introduction bar -->
-  <div class="parallax__group info-container">
-    <!-- Rights of the lottie file go to Nathan Covert https://lottiefiles.com/user/112947 -->
-    <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_h0JgOw.json"  
-    background="transparent"  speed="1"  style="width: 600px; height: 600px;"  loop  autoplay></lottie-player>
-    <div class="text-container">
-      <h2>The Fake News Rabbit Hole.</h2>
-      <!-- I do not have the energy to come up with text right now. -->
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-          eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-           mollit anim id est laborum.</p>
-    </div>
-  </div>
-  
-  <div class="parallax__group info-container">
-    <!-- Confirmation bias // img credit: Thomas Charters -->
-    <img src="{{url_for('static', filename='conf_bias.png')}}" class="rounded-corners"/>
-    <div class="text-container">
-      <h2>Confirmation bias.</h2>
-      <!-- Just imagine there is interesting text here -->
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-        laboris nisi ut aliquip ex ea commodo consequat. </p><br>
-    </div>
-  </div>
-
-  <div class="parallax__group info-container">
-    <!-- Illusory truth effect // img credit: Giorgio Trovato -->
-    <img src="{{url_for('static', filename='illusion.png')}}" class="rounded-corners"/>
-    <div class="text-container">
-      <h2>Illusory truth effect.</h2>
-      <!-- Just imagine there is interesting text here -->
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-        laboris nisi ut aliquip ex ea commodo consequat. </p><br>
-    </div>
-  </div>
-
-  <div class="parallax__group info-container">
-    <!-- Motivated reasoning // img credit: Dalton Caraway -->
-    <img src="{{url_for('static', filename='flag.png')}}" class="rounded-corners"/>
-    <div class="text-container">
-      <h2>Motivated reasoning.</h2>
-      <!-- Just imagine there is interesting text here -->
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-        laboris nisi ut aliquip ex ea commodo consequat. </p><br>
-    </div>
-  </div>
-
-  <div class="parallax__group info-container">
-    <!-- Motivated reasoning // img credit: Miguel Henriques -->
-    <img src="{{url_for('static', filename='fluency.png')}}" class="rounded-corners"/>
-    <div class="text-container">
-      <h2>Processing fluency.</h2>
-      <!-- Just imagine there is interesting text here -->
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-        laboris nisi ut aliquip ex ea commodo consequat. </p><br>
-    </div>
-  </div>
-
-  <div class="parallax__group info-container">
-    <!-- Social pressure // img credit: Yasin Yusuf -->
-    <img src="{{url_for('static', filename='social_pressure.png')}}" class="rounded-corners"/>
-    <div class="text-container">
-      <h2>Social pressure.</h2>
-      <!-- Just imagine there is interesting text here -->
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-        laboris nisi ut aliquip ex ea commodo consequat. </p><br>
-    </div>
-  </div>
-
-  <div class="parallax__group info-container">
-     <!-- our emotions are targeted // img credit: engin akyurt -->
-    <img src="{{url_for('static', filename='anger.png')}}" class="rounded-corners"/>
-    <div class="text-container">
-      <h2>Our emotions are targeted.</h2>
-      <!-- Just imagine there is interesting text here -->
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-        laboris nisi ut aliquip ex ea commodo consequat. </p><br>
-    </div>
-  </div>
-
-
-
-
-<!-- end end end -->
-<div class="parallax__group info-container">
-  <img src="{{url_for('static', filename='concert.jpg')}}" />
-  <div class="text-container">
-    <h2>I would like to help.</h2>
-    <!-- Just imagine there is interesting text here -->
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-      dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-      laboris nisi ut aliquip ex ea commodo consequat. </p><br>
-    <a href="#" class="btn">Read more about the project Stickybeak</a>
-  </div>
-</div>
+</footer>
+</main>
 
 
 {%endblock%}
