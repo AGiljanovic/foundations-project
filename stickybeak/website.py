@@ -49,7 +49,7 @@ def hello():
         cur.execute("INSERT INTO users (email) VALUES (%s)", [email])
         mysql.connection.commit()
         cur.close()
-        return render_template('newsletter.html')
+        return "success"
     return render_template('newsletter.html')
 
 
