@@ -1,26 +1,28 @@
 <html>
 
 <head>
-    <!-- BEHAVIORAL METADATA -->
+    <!-- ========== BEHAVIORAL METADATA ========== -->
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- CSS STYLES -->
+    <!-- ========== CSS STYLES ========== -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
 
-    <!-- ICONS -->
+    <!-- ========== ICONS ========== -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     
+    <!-- ========== TITLE ========== -->
   <title>Stickybeak</title>
+
 </head>
 
 <body >
   <!-- CODE ADAPTED FROM: https://github.com/bedimcode/portfolio-responsive-complete/blob/master/index.html -->
 
-<!-- HEADER STARTS HERE -->
+  <!-- ========== HEADER STARTS HERE ========== -->
   <header class="l-header" id="header">
     <nav class="nav bd-container">
         <a href="#" class="nav_logo">Stickybeak</a>
@@ -33,34 +35,38 @@
                 <li class="nav_item"><a href="#offers" class="nav_link">What can it do?</a></li>
                 <li class="nav_item"><a href="#newsletter" class="nav_link ">Newsletter</a></li>
             </ul>
-        </div>
+        </div> <!-- #nav_menu -->
 
         <div class="nav_toggle" id="nav-toggle">
             <i class='bx bx-grid-alt'></i>
-        </div>
-    </nav>
+        </div> <!-- #nav_toggle -->
+    </nav> 
   </header>
 
   {% block content %}
-
   {% endblock %}
+
+  <!-- ========== JAVASCRIPT IMPORTS ========== -->
 
     <!-- SCROLL REVEAL.JS -->
     <script src="https://unpkg.com/scrollreveal"></script>
-
-  <!-- LOTTIE SCRIPTS -->
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
     <!-- MAIN JAVASCRIPT -->
     <script type="text/javascript" src="{{ url_for('static', filename='anime.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='imagesloaded.pkgd.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='grids.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
-    <!-- <img src="{{url_for('static', filename='bg1.png')}}" /> -->
+  
+    <!-- HIDDEN ICONS -->
     <svg class="hidden">
       <!-- cross icon -->
       <symbol id="icon-cross" viewBox="0 0 24 24">
-        <path d="M 5.5,2.5 C 5.372,2.5 5.244,2.549 5.146,2.646 L 2.646,5.146 C 2.451,5.341 2.451,5.659 2.646,5.854 L 8.793,12 2.646,18.15 C 2.451,18.34 2.451,18.66 2.646,18.85 L 5.146,21.35 C 5.341,21.55 5.659,21.55 5.854,21.35 L 12,15.21 18.15,21.35 C 18.24,21.45 18.37,21.5 18.5,21.5 18.63,21.5 18.76,21.45 18.85,21.35 L 21.35,18.85 C 21.55,18.66 21.55,18.34 21.35,18.15 L 15.21,12 21.35,5.854 C 21.55,5.658 21.55,5.342 21.35,5.146 L 18.85,2.646 C 18.66,2.451 18.34,2.451 18.15,2.646 L 12,8.793 5.854,2.646 C 5.756,2.549 5.628,2.5 5.5,2.5 Z"/>
+        <path d="M 5.5,2.5 C 5.372,2.5 5.244,2.549 5.146,2.646 L 2.646,5.146 
+        C 2.451,5.341 2.451,5.659 2.646,5.854 L 8.793,12 2.646,18.15 C 2.451,18.34 2.451,18.66 2.646,18.85 L 
+        5.146,21.35 C 5.341,21.55 5.659,21.55 5.854,21.35 L 12,15.21 18.15,21.35 C 18.24,21.45 18.37,21.5 18.5,
+        21.5 18.63,21.5 18.76,21.45 18.85,21.35 L 21.35,18.85 C 21.55,18.66 21.55,18.34 21.35,18.15 L 15.21,12 21.35,5.854 
+        C 21.55,5.658 21.55,5.342 21.35,5.146 L 18.85,2.646 C 18.66,2.451 18.34,2.451 18.15,2.646 L 12,8.793 5.854,2.646 
+        C 5.756,2.549 5.628,2.5 5.5,2.5 Z"/>
       </symbol>
 
   </body>

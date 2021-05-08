@@ -1,0 +1,114 @@
+<html>
+
+<head>
+    <!-- ========== BEHAVIORAL METADATA ========== -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ========== CSS STYLES ========== -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- ========== ICONS ========== -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    
+    <!-- ========== TITLE ========== -->
+  <title>Stickybeak</title>
+</head>
+
+<body>
+    <!-- ============= HEADER SECTION =============== -->
+    <header class="l-header" id="header">
+        <nav class="nav bd-container">
+            <a href="/" class="nav_logo">Stickybeak</a>
+
+            <div class="nav_menu" id="nav-menu">
+                <ul class="nav_list">
+                    <li class="nav_item"><a href="/" class="nav_link active-link">Home</a></li>
+                    <li class="nav_item"><a href="/#story" class="nav_link">Story</a></li>
+                    <li class="nav_item"><a href="/#audience" class="nav_link">Who is it for?</a></li>
+                    <li class="nav_item"><a href="/#offers" class="nav_link">What can it do?</a></li>
+                    <li class="nav_item"><a href="/#newsletter" class="nav_link ">Newsletter</a></li>
+                </ul>
+            </div> <!-- #nav_menu -->
+
+            <div class="nav_toggle" id="nav-toggle">
+                <i class='bx bx-grid-alt'></i>
+            </div> <!-- #nav_toggle -->
+        </nav>
+    </header>
+
+
+    <!-- ============= STORY SECTION ============= -->
+    <section class="home">
+        <div class="home_container bd-container bd-grid">
+            <div class="home_img">
+                <img src="{{url_for('static', filename='story2.svg')}}" />
+            </div> <!-- #home_img -->
+
+            <div class="home_data">
+                <h1 class="home_title">The story behind Stickybeak</h1>
+                <p class="home_description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br><br>Ut enim ad minim veniam, 
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                            irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>  <!-- #home_data -->
+        </div> <!-- #home_container bd-container bd-grid -->
+    </section>
+
+
+    <!-- ============= TEXT ============= -->
+    <div>
+        <section class="audience section bd-container story_data" id="offers">
+            <h2 class="section-title">Lorem Ipsum Dolorem</h2>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. <br><br>Duis aute irure dolor in reprehenderit in 
+                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+                occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
+                anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in
+                culpa qui officia deserunt mollit anim id est laborum.</p>
+        </section>
+    </div> <!-- #audience section bd-container story_data -->
+
+
+    <!-- ============= FOOTER SECTION ============= -->
+    <footer class="footer section">
+        <div class="footer__container bd-container bd-grid">
+            <div class="footer__content">
+                <h3 class="footer__title">
+                    <a href="#" class="footer__logo">Stickybeak</a>
+                </h3>
+                <p class="footer__description">Stopping the spread of fake news one fact at a time </p>
+            </div> <!-- #footer_content -->
+
+            <div class="footer__content">
+                <h3 class="footer__title">The creator</h3>
+                <ul>
+                    <li><a href="#" class="footer__link">About me</a></li>
+                    <li><a href="#" class="footer__link">My mision</a></li>
+                </ul>
+            </div> <!-- #footer_content -->
+
+            <div class="footer__content">
+                <h3 class="footer__title">Social</h3>
+                <a href="https://github.com/AGiljanovic" class="footer__social"><i class='bx bxl-github '></i></a>
+            </div> <!-- #footer_content -->
+        </div> <!-- #footer_container -->
+
+    </footer>
+
+    <!-- ============= JAVASCRIPT IMPORTS ============= -->
+
+    <!-- SCROLL REVEAL.JS -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- MAIN JAVASCRIPT -->
+    <script type="text/javascript" src="{{ url_for('static', filename='grids.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
+
+</body>
+
+</html>

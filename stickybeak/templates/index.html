@@ -4,214 +4,222 @@
 
 <main class="l-main">
 
- <!-- START OF THE PAGE // HOME -->
-  <section class="home" id="home">
-      <div class="home_container bd-container bd-grid">
-          <div class="home_img">
-               <img src="{{url_for('static', filename='home.svg')}}" />
-          </div>
+ <!-- ========== START OF THE PAGE // HOME SECTION ========== -->
+    <section class="home" id="home">
+        <div class="home_container bd-container bd-grid">
+            <div class="home_img">
+                <img src="{{url_for('static', filename='home.svg')}}" />
+            </div><!-- #home_img -->
 
-          <div class="home_data">
-              <h1 class="home_title">Saying Goodbye to Fake News</h1>
-              <p class="home_description"> My goal with Stickybeak is to stop the spread of fake news, one fact at a time.</p>
-          </div>   
-      </div>
-  </section>
+            <div class="home_data">
+                <h1 class="home_title">Saying Goodbye to Fake News</h1>
+                <p class="home_description"> My goal with Stickybeak is to stop the spread of fake news, one fact at a time.</p>
+            </div> <!-- #home_data -->
+        </div><!-- #home_container-->
+    </section>
 
-  <!-- BACKGROUND STORY SECTION -->
-  <section class="story section bd-container" id="story">
-      <div class="story_container bd-grid">
-          <div class="story_data">
-              <h2 class="section-title-center">What this project means to me and why I chose it</h2>
-              <p class="story_description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <a href="#" class="button">Read more about my story</a>
-          </div>
+  <!--  ========== BACKGROUND STORY SECTION ========== -->
+    <section class="story section bd-container" id="story">
+        <div class="story_container bd-grid">
+            <div class="story_data">
+                <h2 class="section-title-center">What this project means to me and why I chose it</h2>
+                <p class="story_description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-          <div class="story_img">
-            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_yIZkqk.json"  
-            background="transparent"  speed="1"  style="width: 550px; height: 500px;"  loop  autoplay></lottie-player>
-          </div>
-      </div>
-  </section>
+                <p><a class="button" href="{{ url_for('story_func') }}">Read more about my story</a></p>
+            </div><!-- #story_data -->
 
-  <!-- MY AUDIENCE -->
-  <section class="audience section bd-container" id="audience">
+            <div class="story_img">
+                <img src="{{url_for('static', filename='story.svg')}}" />
+            </div><!-- #story_img -->
+        </div> <!-- #story_container bd-grid -->
+    </section>
+
+  <!-- ========== WHO IS IT FOR ========== -->
+    <section class="audience section bd-container" id="audience">
     
-      <h2 class="section-title"> Who can benefit from using the app?</h2>
-      <div class="audience_container bd-grid">
-          <div class="audience_data">
-            <img src="{{url_for('static', filename='audience1.svg')}}" />
-              <h3 class="audience_title">The confused one </h3>
-              <span class="accessory__category"> Perhaps you are not the most comfortable with technology, and you do not yet have the idea
-                                                 how to verify information. You are not sure if the article you just read is real or not.</span>
-          </div>
+        <h2 class="section-title"> Who can benefit from using the app?</h2>
+        <div class="audience_container bd-grid">
+            <div class="audience_data">
+                <img src="{{url_for('static', filename='audience1.svg')}}" />
+                <h3 class="audience_title">The confused one </h3>
+                <span> Perhaps you are not the most comfortable with technology, and you do not yet have the idea
+                       how to verify information.<br>You are not sure if the article you just read is real or not.</span>
+            </div> <!-- #audience_data -->
 
-          <div class="audience_data">
-            <img src="{{url_for('static', filename='audience2.svg')}}" />
-              <h3 class="audience_title">The curious one</h3>
-              <span class="accessory__category"> While you do fact check sometimes, you feel like browsing through
-                                                 different articles eats up too much time, so you want a quick and handy 
-                                                 way to check things on the go. </span>
-          </div>
+            <div class="audience_data">
+                <img src="{{url_for('static', filename='audience2.svg')}}" />
+                <h3 class="audience_title">The curious one</h3>
+                <span> While you do fact check sometimes, you feel like browsing through different articles eats up too 
+                       much time, so you want a quick and handy way to check things on the go. </span>
+            </div>  <!-- #audience_data -->
 
-          <div class="audience_data">
-              <img src="{{url_for('static', filename='audience3.svg')}}" />
-              <h3 class="audience_title">The collector</h3>
-              <span class="accessory__category"> While you may not fall for the fake news yourself, you  still like reading about them,
-                                                 whether it be because they are entertaining, or you want to inform
-                                                 others.</span>
-          </div>
-      </div>
-  </section>
+            <div class="audience_data">
+                <img src="{{url_for('static', filename='audience3.svg')}}" />
+                <h3 class="audience_title">The collector</h3>
+                <span> While you may not fall for the fake news yourself, you  still like reading about them,
+                       whether it be because they are entertaining, or you want to inform others.</span>
+            </div>  <!-- #audience_data -->
+        </div>  <!-- #audience_container bd-grid-->
+    </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="accessory section bd-container" id="offers">
-      <h2 class="section-title">What it offers to you</h2>
+  <!-- ========== WHAT IT DOES SECTION ========== -->
+    <section class="audience section bd-container" id="offers">
+        <h2 class="section-title">What it can help you with</h2>
 
       <!-- CODE ADAPTED FROM: https://github.com/bedimcode/portfolio-responsive-complete/blob/master/index.html -->
-      <div class="content">
-				<div class="grid">
-					<div class="grid__item grid__checker" >
-						<div class="product">
-                            <div class="product__bg"></div>
-							<img class="product__img" src="{{url_for('static', filename='check.png')}}" alt="img 01"/>
-							<h2 class="product__title">Help you Fact Check</h2>
-							<p class="product__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        <div class="content">
+	        <div class="grid">
+			    <div class="grid__item grid__checker" >
+				    <div class="product">
+                        <div class="product__bg">  </div> <!-- #product_bg -->
+                        <img class="product__img" src="{{url_for('static', filename='check.png')}}" alt="img 01"/>
+                        <h2 class="product__title"> Help you Fact Check</h2>
+                        <p class="product__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br><br>
                                                             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                                                            aliquip ex ea commodo consequat. <br><br>Duis aute irure dolor in reprehenderit in 
                                                             voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
                                                             occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
+                                                        anim id est laborum.</p>
+					</div> <!-- #product -->
+				</div> <!-- grid_item gird_checker -->
+                        
+                <div class="grid__item grid__curve" >
+                    <div class="product">
+                        <div class="product__bg">   </div> <!-- #product_bg -->
+                            <img class="product__img" src="{{url_for('static', filename='curve.png')}}" alt="img 01"/>
+                            <h2 class="product__title">Stay Ahead of the Curve</h2>
+                            <p class="product__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br><br>
+                                                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                                                aliquip ex ea commodo consequat.<br><br> Duis aute irure dolor in reprehenderit in 
+                                                                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+                                                                occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
                                                             anim id est laborum.</p>
-						</div>
+                    </div> <!-- #product -->
+                </div> <!-- #geid_item grid_curve -->
+                        
+                <div class="grid__item grid__information">
+                    <div class="product">
+                        <div class="product__bg">   </div> <!-- #product_bg -->
+                        <img class="product__img" src="{{url_for('static', filename='information.png')}}" alt="img 01"/>
+                        <h2 class="product__title">In Depth Information</h2>
+                        <p class="product__description">ALorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br><br>
+                                                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                                                aliquip ex ea commodo consequat. <br><br>Duis aute irure dolor in reprehenderit in 
+                                                                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+                                                                occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
+                                                        anim id est laborum.</p>          
 					</div>
-                    
-                    <div class="grid__item grid__curve" >
-						<div class="product">
-                            <div class="product__bg"></div>
-							<img class="product__img" src="{{url_for('static', filename='curve.png')}}" alt="img 01"/>
-							<h2 class="product__title">Stay Ahead of the Curve</h2>
-							<p class="product__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-                                                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-                                                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
-                                                            anim id est laborum.</p>
-						</div>
-                    </div>
-                    
-					<div class="grid__item grid__information">
-						<div class="product">
-							<div class="product__bg"></div>
-							<img class="product__img" src="{{url_for('static', filename='information.png')}}" alt="img 01"/>
-							<h2 class="product__title">In Depth Information</h2>
-							<p class="product__description">ALorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-                                                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-                                                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
-                                                            anim id est laborum.</p>
-							
-						</div>
-					</div>
-					<div class="grid__item grid__source">
-						<div class="product">
-							<div class="product__bg"></div>
-                            <img class="product__img" src="{{url_for('static', filename='source.png')}}" alt="img 01"/>
-							<h2 class="product__title">Dive into the Sources</h2>
-							<p class="product__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-                                                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-                                                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
-                                                            anim id est laborum.</p>
+                </div>  <!-- #grid_item grid_information -->
+                
+				<div class="grid__item grid__source">
+					<div class="product">
+						<div class="product__bg">   </div>  <!-- #product_bg -->
+                        <img class="product__img" src="{{url_for('static', filename='source.png')}}" alt="img 01"/>
+						<h2 class="product__title">Dive into the Sources</h2>
+						<p class="product__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br><br>
+                                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                                        aliquip ex ea commodo consequat. <br><br>Duis aute irure dolor in reprehenderit in 
+                                                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+                                                        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
+                                                        anim id est laborum.</p>
 						
-						</div>
-					</div>
-					<div class="grid__item">
-						<div class="product grid__identify">
-							<div class="product__bg"></div>
-							<img class="product__img" src="{{url_for('static', filename='identify.png')}}" alt="img 01"/>
-							<h2 class="product__title">Learn to Identify</h2>
-							<p class="product__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+					</div><!-- #product -->
+                </div>  <!-- #grid_item grid_source-->
+                
+				<div class="grid__item">
+					<div class="product grid__identify">
+						<div class="product__bg">   </div> <!-- #product_bg -->
+						<img class="product__img" src="{{url_for('static', filename='identify.png')}}" alt="img 01"/>
+						<h2 class="product__title">Learn to Identify</h2>
+						<p class="product__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br><br> 
                                                             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                                                            aliquip ex ea commodo consequat.<br><br> Duis aute irure dolor in reprehenderit in 
                                                             voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
                                                             occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
                                                             anim id est laborum.</p>
-							
-						</div>
-					</div>
-					<div class="grid__item grid__educate">
-						<div class="product">
-							<div class="product__bg"></div>
-							<img class="product__img" src="{{url_for('static', filename='educate.png')}}" alt="img 01"/>
-							<h2 class="product__title"> Help Educate Otehrs</h2>
-							<p class="product__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+					</div> <!-- #product_grid grid_identify -->
+                </div>  <!-- #grid_item -->
+                
+				<div class="grid__item grid__educate">
+					<div class="product">
+						<div class="product__bg">   </div> <!-- #product_bg -->
+						<img class="product__img" src="{{url_for('static', filename='educate.png')}}" alt="img 01"/>
+						<h2 class="product__title"> Educate Others</h2>
+						<p class="product__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br><br>
                                                             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                                                            aliquip ex ea commodo consequat. <br><br>Duis aute irure dolor in reprehenderit in 
                                                             voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
                                                             occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
                                                             anim id est laborum.</p>
-							
-						</div>
-					</div>
-				</div>
-			</div>
-  </section>
+					</div> <!-- #product -->
+				</div> <!-- #grid_item grid_educate -->
+		    </div>  <!-- #grid -->
+	    </div>  <!-- #content -->
+    </section>
 
- <!-- NEWSLETTER -->
-  <section class="newsletter section" id="newsletter">
-      <div class="newsletter_container bd-container bd-grid">
-          <div class="newsletter_content">
-              <h2 class="section-title-center newsletter_title">Sign up for the Newsletter now</h2>
-              <p class="newsletter_description">If my project peaked your interest, sign up for the newsletter to get updates about my progress.</p>
-              <form action="">
-                  <div class="newsletter_direction">
-                      <input type="text" placeholder="Email address" class="newsletter_input">
-                      <a href="#" class="button">Send</a>
-                  </div>
-              </form>
-          </div>
+ <!-- ========== NEWSLETTER ========== -->
+    <section class="newsletter section" id="newsletter">
+        <div class="newsletter_container bd-container bd-grid">
+            <div class="newsletter_content">
+                <h2 class="section-title-center newsletter_title">The Newsletter and staying up to date</h2>
+                <p class="newsletter_description">If my project peaked your interest, sign up for the 
+                                                  newsletter to get updates about my progress.</p>
+            </div> <!-- #newsletter_content -->
+          
+            <div class="newsletter_img">
+            <img class="newsletter_img" src="{{url_for('static', filename='newsletter.svg')}}" alt="img 01"/>
+            </div> <!-- #newsletter_img -->
 
-          <div class="newsletter_img">
-            <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_tW99ax.json"  
-            background="transparent"  speed="1"  style="width: 500px; height: 300px;"  loop  autoplay> </lottie-player>
-          </div>
-      </div>
-  </section>
+            <!-- MODAL BOX POP UP CREDIT: https://www.the-art-of-web.com/javascript/feedback-modal-window/-->
+            <button class="button newsletter_button modal_open" id="modal_open"> Sign up for the Newsletter</button></p>
 
-  <!-- FOOTER  -->
-  <footer class="footer section">
-    <div class="footer__container bd-container bd-grid">
-        <div class="footer__content">
-            <h3 class="footer__title">
-                <a href="#" class="footer__logo">Stickybeak</a>
-            </h3>
-            <p class="footer__description">Stopping the spread of fake news one fact at a time </p>
-        </div>
+            <div id="modal_wrapper" class="modal_wrapper">
+                <div id="modal_window" class="modal_winow"">
+                    <div style="text-align: right;"><a id="modal_close" href="#">close <b>X</b></a></div>
+                        <p><br>Join the Stickybeak club to stay up to date with my progress! ✌️</p><br>
 
-        <div class="footer__content">
-            <h3 class="footer__title">The creator</h3>
-            <ul>
-                <li><a href="#" class="footer__link">About me</a></li>
-                <li><a href="#" class="footer__link">My mision</a></li>
-            </ul>
-        </div>
+                        <form id="modal_feedback" method="POST" action="#" accept-charset="UTF-8">
+                            <p><label>Email Address<strong>*</strong><br>
+                                <input type="email" required title="Please enter a valid email address" size="20" name="email" value="">
+                            </label></p><br>
+                            <p><input type="submit" value="Subscribe"></p>
+                        </form>
+                </div> <!-- #modal_window -->
+            </div> <!-- #modal_wrapper -->
+        </div> <!-- #newsletter_container bd-container bd-grid -->
+    </section>
 
-        <div class="footer__content">
-            <h3 class="footer__title">Social</h3>
-            <a href="https://github.com/AGiljanovic" class="footer__social"><i class='bx bxl-github '></i></a>
-        </div>
-    </div>
+  <!-- ========== FOOTER ========== -->
+    <footer class="footer section">
+        <div class="footer__container bd-container bd-grid">
+            <div class="footer__content">
+                <h3 class="footer__title">
+                    <a href="#" class="footer__logo">Stickybeak</a>
+                </h3>
+                <p class="footer__description">Stopping the spread of fake news one fact at a time </p>
+            </div><!-- #footer_content -->
 
-</footer>
+            <div class="footer__content">
+                <h3 class="footer__title">The creator</h3>
+                <ul>
+                    <li><a href="#" class="footer__link">About me</a></li>
+                    <li><a href="#" class="footer__link">My mision</a></li>
+                </ul> 
+            </div> <!-- #footer_content -->
+
+            <div class="footer__content">
+                <h3 class="footer__title">Social</h3>
+                <a href="https://github.com/AGiljanovic" class="footer__social"><i class='bx bxl-github '></i></a>
+            </div> <!-- #footer_content -->
+        </div> <!-- #footer_container bd-container bd-grid -->
+    </footer>
 </main>
 
 

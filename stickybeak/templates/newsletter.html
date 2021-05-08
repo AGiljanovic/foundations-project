@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- ========== BEHAVIORAL METADATA ========== -->
+	<meta charset="utf-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<!-- ========== CSS STYLES ========== -->
+	<link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+	<!-- ========== ICONS ========== -->
+	<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel=
+	'stylesheet'>
+	<link href="{{ url_for('static', filename='favicon.ico') }}" rel=
+	"shortcut icon">
+	<title>Stickybeak</title>
+</head>
+<body>
+	<!-- ========= HEADER SECTION ========= -->
+	<header class="l-header" id="header">
+		<nav class="nav bd-container">
+			<a class="nav_logo" href="/">Stickybeak</a>
+			<div class="nav_menu" id="nav-menu">
+				<ul class="nav_list">
+					<li class="nav_item">
+						<a class="nav_link active-link" href="/">Home</a>
+					</li>
+					<li class="nav_item">
+						<a class="nav_link" href="/#story">Story</a>
+					</li>
+					<li class="nav_item">
+						<a class="nav_link" href="/#audience">Who is it for?</a>
+					</li>
+					<li class="nav_item">
+						<a class="nav_link" href="/#offers">What can it do?</a>
+					</li>
+					<li class="nav_item">
+						<a class="nav_link" href="/#newsletter">Newsletter</a>
+					</li>
+				</ul>
+			</div><!-- #nav_menu -->
+			<div class="nav_toggle" id="nav-toggle">
+				<i class='bx bx-grid-alt'></i>
+			</div><!-- #nav_toggle -->
+		</nav>
+	</header>
+	<section class="home">
+		<div class="home_container bd-container bd-grid">
+			<div class="home_img"><img src=
+			"{{url_for('static',%20filename='sent.svg')}}"></div><!-- #home_img -->
+			<div class="home_data">
+				<h1 class="home_title">Thank you for subscribing to the newsletter</h1>
+				<p class="home_description">Your email will be sent shortly.<br>
+				In the meanwhile, you can read more about the project, and why I decided to
+				choose it.</p>
+				<p><a class="button" href="{{%20url_for('story_func')%20}}">Learn more
+				about the story</a></p>
+			</div><!-- #home_data -->
+		</div><!-- #home_container -->
+	</section><!-- ============= FOOTER SECTION ============= -->
+	<footer class="footer section">
+		<div class="footer__container bd-container bd-grid">
+			<div class="footer__content">
+				<h3 class="footer__title"><a class="footer__logo" href=
+				"#">Stickybeak</a></h3>
+				<p class="footer__description">Stopping the spread of fake news one fact at
+				a time</p>
+			</div><!-- #footer_content -->
+			<div class="footer__content">
+				<h3 class="footer__title">The creator</h3>
+				<ul>
+					<li>
+						<a class="footer__link" href="#">About me</a>
+					</li>
+					<li>
+						<a class="footer__link" href="/story.html">My mision</a>
+					</li>
+				</ul>
+			</div><!-- #footer_content -->
+			<div class="footer__content">
+				<h3 class="footer__title">Social</h3><a class="footer__social" href=
+				"https://github.com/AGiljanovic"><i class='bx bxl-github'></i></a>
+			</div><!-- #footer_content -->
+		</div><!-- #footer_container bd-container bd-grid -->
+	</footer><!-- ============= JAVASCRIPT IMPORTS  ============= -->
+	<!-- SCROLL REVEAL.JS -->
+	<script src="https://unpkg.com/scrollreveal">
+	</script> <!-- MAIN JAVASCRIPT -->
+	 
+	<script src="{{%20url_for('static',%20filename='grids.js')%20}}" type=
+	"text/javascript">
+	</script> 
+	<script src="{{%20url_for('static',%20filename='main.js')%20}}" type=
+	"text/javascript">
+	</script>
+</body>
+</html>
