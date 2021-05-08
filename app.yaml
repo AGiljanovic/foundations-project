@@ -15,7 +15,7 @@ env_variables:
 
 # ================== Database settings ==================
 
-mysql_host: 'localhost'
-mysql_user: 'root'
-mysql_password: ''
-mysql_db: 'foundations'
+# mysql_host: 'localhost'
+# mysql_user: 'root'
+# mysql_password: ''
+# mysql_db: 'foundations'
