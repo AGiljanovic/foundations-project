@@ -12,10 +12,7 @@ handlers:
   script: auto
 
 env_variables:
-
-# ================== Database settings ==================
-
-# mysql_host: 'localhost'
-# mysql_user: 'root'
-# mysql_password: ''
-# mysql_db: 'foundations'
+  CLOUD_SQL_USERNAME: USERNAME
+  CLOUD_SQL_PASSWORD: 311MpP0wINeHxGth
+  CLOUD_SQL_DATABASE_NAME: foundationsdb
+  CLOUD_SQL_CONNECTION_NAME: foundations-project-310611:us-central1:foundationsdb

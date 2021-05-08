@@ -1,6 +1,6 @@
 from flask import Flask
-from flask import render_template, request, redirect, url_for
-from flask_mysqldb import MySQL
+from flask import render_template, request, redirect, url_for, jsonify
+from db import add_emails
 
 app = Flask(__name__)
 
@@ -30,36 +30,39 @@ def story_func():
 if __name__ == "__main__":
     app.run(host="localhost", port=8080, debug=True)
 
-# ================== Database connections ==================
 
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'foundations'
-mysql = MySQL(app)
-
-
-@app.route('/', methods=['GET', 'POST'])
-def hello():
+@app.route('/', methods=['POST', 'GET'])
+def emails():
     if request.method == 'POST':
-        # Fetch form data
-        userDetails = request.form
-        email = userDetails['email']
-        cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO users (email) VALUES (%s)", [email])
-        mysql.connection.commit()
-        cur.close()
-        return "success"
+        if not request.is_json:
+            return jsonify({"msg": "Missing JSON in request"}), 400  
+
+        add_emails(request.get_json())
+        return 'Email Added'
+
     return render_template('newsletter.html')
 
 
-@app.route('/newsletter')
-def users():
-    cur = mysql.connection.cursor()
-    resultValue = cur.execute("SELECT * FROM users")
-    if resultValue > 0:
-        userDetails = cur.fetchall()
-        return render_template('newsletter.html', userDetails=userDetails)
+# @app.route('/', methods=['GET', 'POST'])
+# def hello():
+#     if request.method == 'POST':
+#         # Fetch form data
+#         userDetails = request.form
+#         email = userDetails['email']
+#         cur = mysql.connection.cursor()
+#         cur.execute("INSERT INTO users (email) VALUES (%s)", [email])
+#         mysql.connection.commit()
+#         cur.close()
+#         return "success"
+#     return render_template('newsletter.html')
+
+# @app.route('/newsletter')
+# def users():
+#     cur = mysql.connection.cursor()
+#     resultValue = cur.execute("SELECT * FROM users")
+#     if resultValue > 0:
+#         userDetails = cur.fetchall()
+#         return render_template('newsletter.html', userDetails=userDetails)
 
 
 if __name__ == '__main__':
