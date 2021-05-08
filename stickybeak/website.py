@@ -1,6 +1,5 @@
 from flask import Flask
 from flask import render_template, request, redirect, url_for, jsonify
-from db import add_emails
 from flask import jsonify
 import os
 import pymysql
