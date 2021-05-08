@@ -1,7 +1,6 @@
 from flask import Flask
 from flask import render_template, request, redirect, url_for
 from flask_mysqldb import MySQL
-import yaml
 
 app = Flask(__name__)
 
@@ -33,12 +32,10 @@ if __name__ == "__main__":
 
 # ================== Database connections ==================
 
-db = yaml.load(open('app.yaml'))
-app.config['MYSQL_HOST'] = db['mysql_host']
-app.config['MYSQL_USER'] = db['mysql_user']
-app.config['MYSQL_PASS'] = db['mysql_password']
-app.config['MYSQL_DB'] = db['mysql_db']
-
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'foundations'
 mysql = MySQL(app)
 
 
@@ -49,10 +46,10 @@ def hello():
         userDetails = request.form
         email = userDetails['email']
         cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO users (email) VALUES (%s)", [email])
+        cur.execute("INSERT INTO users (email) VALUES (%s)", (email))
         mysql.connection.commit()
         cur.close()
-        return redirect('/newsletter')
+        return "Thank you for signing up."
     return render_template('newsletter.html')
 
 
