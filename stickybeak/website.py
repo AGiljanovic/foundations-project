@@ -46,10 +46,10 @@ def hello():
         userDetails = request.form
         email = userDetails['email']
         cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO users (email) VALUES (%s)", (email))
+        cur.execute("INSERT INTO users (email) VALUES (%s)", [email])
         mysql.connection.commit()
         cur.close()
-        return "Thank you for signing up."
+        return render_template('newsletter.html')
     return render_template('newsletter.html')
 
 
