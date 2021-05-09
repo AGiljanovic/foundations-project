@@ -56,7 +56,7 @@ def signup_index():
 
 
 # PAGES
-@app.route('/')
+@app.route('/base')
 def index():
     return render_template('index.html', page_title="Stickybeak")
 
