@@ -1,1 +1,1 @@
-from stickybeak.website import app  # noqa: F401
+from stickybeak.app import app  # noqa: F401

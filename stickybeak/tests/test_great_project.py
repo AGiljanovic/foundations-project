@@ -1,4 +1,4 @@
-from stickybeak.website import app
+from stickybeak.app import app
 
 
 def test_index():
