@@ -54,19 +54,9 @@ def newsletter_index():
         return render_template('newsletter.html', page_title="Stickybeak")
 
 
-# PAGES
 @app.route('/')
 def index():
     return render_template('index.html', page_title="Stickybeak")
-
-
-# @app.route('/newsletter', methods=['GET', 'POST'])
-# def index_func():
-#     if request.method == 'POST':
-#         return render_template('newsletter.html',
-#                                page_title="Stickybeak Newsletter")
-#     return render_template('newsletter.html',
-#                            page_title="Stickybeak Newsletter")
 
 
 @app.route('/story', methods=['GET', 'POST'])
