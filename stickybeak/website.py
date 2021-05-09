@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import render_template, request, redirect, url_for, jsonify
+from flask import jsonify
 import os
 import pymysql
 
@@ -28,11 +29,11 @@ def open_connection():
 
     return conn
 
-# adding to the db
+
 def add_emails(email):
     conn = open_connection()
     with conn.cursor() as cursor:
-        cursor.execute('INSERT INTO userdetails (email) VALUES(%s)',
+        cursor.execute('INSERT INTO emails (emails) VALUES(%s)',
                        (email["email"]))
     conn.commit()
     conn.close()
@@ -57,21 +58,23 @@ def story_func():
     return render_template('story.html')
 
 
+if __name__ == "__main__":
+    app.run(host="localhost", port=8080, debug=True)
+
+
 @app.route('/', methods=['POST', 'GET'])
 def emails():
     if request.method == 'POST':
         if not request.is_json:
-            #  return jsonify({"msg": "Missing JSON in request"}), 400  
-            # sadly, I had to use this sad workaround, it is not connecting to
-            # the database as I hoped.
-            return render_template('newsletter.html')
+            # return jsonify({"msg": "Missing JSON in request"}), 400
+            # breaks the website, have to disable path to db; dont know how to fix ffs
+            return render_template('story.html')
 
         add_emails(request.get_json())
-        return render_template('newsletter.html')
+        return 'Email Added'
 
     return render_template('newsletter.html')
 
 
 if __name__ == '__main__':
     app.run(debug=True, host='localhost')
-
