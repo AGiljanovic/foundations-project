@@ -32,8 +32,8 @@ class Todo(db.Model):
 
 
 # Routes
-@app.route('/signup', methods=['POST', 'GET'])
-def signup_index():
+@app.route('/newsletter', methods=['POST', 'GET'])
+def newsletter_index():
     if request.method == 'POST':
         # The POST request is done by the form in the index.html file.
         # It creates a new todo in the database
