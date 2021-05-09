@@ -32,8 +32,8 @@ class Todo(db.Model):
 
 
 # Routes
-@app.route('/signup', methods=['POST', 'GET'])
-def signup_index():
+@app.route('/newsletter', methods=['POST', 'GET'])
+def newsletter_index():
     if request.method == 'POST':
         # The POST request is done by the form in the index.html file.
         # It creates a new todo in the database
@@ -67,7 +67,7 @@ def index_func():
         return render_template('newsletter.html',
                                page_title="Stickybeak Newsletter")
     return render_template('newsletter.html',
-                               page_title="Stickybeak Newsletter")
+                           page_title="Stickybeak Newsletter")
 
 
 @app.route('/story', methods=['GET', 'POST'])
@@ -76,7 +76,7 @@ def story_func():
         return render_template('story.html',
                                page_title="Stickybeak Story")
     return render_template('story.html',
-                               page_title="Stickybeak Story")
+                           page_title="Stickybeak Story")
 
 
 if __name__ == '__main__':
