@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
 import os
 
@@ -71,7 +71,10 @@ def index_func():
 @app.route('/story', methods=['GET', 'POST'])
 def story_func():
     if request.method == 'POST':
-        return render_template('story.html', page_title="Stickybeak Story")
+        return render_template('story.html',
+                               page_title="Stickybeak Newsletter")
+    return render_template('story.html',
+                               page_title="Stickybeak Newsletter")
 
 
 if __name__ == '__main__':
