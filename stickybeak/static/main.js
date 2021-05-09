@@ -84,9 +84,9 @@ sr.reveal(`.story_data, .newsletter_img,
 
 document.getElementById("modal_feedback").addEventListener("submit", function(e) {
     var form = this;
-    if(form.email.value == "") {
+    if(form.content.value == "") {
       alert("Please enter a valid Email address");
-      form.email.focus();
+      form.content.focus();
       e.preventDefault();
     }
   }, false);
