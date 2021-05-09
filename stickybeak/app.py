@@ -49,10 +49,7 @@ def newsletter_index():
         except:
             return '🤔 The task could not be added'
     else:
-        # If the request is not POST return the list of ToDos from the
-        # database and render the index.html template
-        tasks = Todo.query.all()
-        return render_template("index.html", tasks=tasks)
+        return render_template('newsletter.html', page_title="Stickybeak")
 
 
 # PAGES
@@ -61,13 +58,13 @@ def index():
     return render_template('index.html', page_title="Stickybeak")
 
 
-@app.route('/newsletter', methods=['GET', 'POST'])
-def index_func():
-    if request.method == 'POST':
-        return render_template('newsletter.html',
-                               page_title="Stickybeak Newsletter")
-    return render_template('newsletter.html',
-                           page_title="Stickybeak Newsletter")
+# @app.route('/newsletter', methods=['GET', 'POST'])
+# def index_func():
+#     if request.method == 'POST':
+#         return render_template('newsletter.html',
+#                                page_title="Stickybeak Newsletter")
+#     return render_template('newsletter.html',
+#                            page_title="Stickybeak Newsletter")
 
 
 @app.route('/story', methods=['GET', 'POST'])
