@@ -47,9 +47,7 @@ def newsletter_index():
             return render_template('newsletter.html', page_title="Stickybeak")
 
         except:
-            # return 'The email could not be added' 
-            # the page opts for this, but for viewing purposes I will do this.
-            return render_template('newsletter.html', page_title="Stickybeak")
+            return 'The email could not be added'
     else:
         return render_template('newsletter.html', page_title="Stickybeak")
 
