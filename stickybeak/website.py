@@ -66,9 +66,8 @@ if __name__ == "__main__":
 def emails():
     if request.method == 'POST':
         if not request.is_json:
-            # return jsonify({"msg": "Missing JSON in request"}), 400
-            # breaks the website, have to disable path to db; dont know how to fix ffs
-            return render_template('story.html')
+            # using this sadly breaks it
+            return jsonify({"msg": "Missing JSON in request"}), 400  
 
         add_emails(request.get_json())
         return 'Email Added'
