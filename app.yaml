@@ -12,7 +12,7 @@ handlers:
   script: auto
 
 env_variables:
-  CLOUD_SQL_USERNAME: USERNAME
-  CLOUD_SQL_PASSWORD: 311MpP0wINeHxGth
-  CLOUD_SQL_DATABASE_NAME: foundationsdb
-  CLOUD_SQL_CONNECTION_NAME: foundations-project-310611:us-central1:foundationsdb
+  CLOUD_SQL_USERNAME: root
+  CLOUD_SQL_PASSWORD: password
+  CLOUD_SQL_DATABASE_NAME: newsletter
+  CLOUD_SQL_CONNECTION_NAME: foundations-project-310611:europe-west3:fprojectdb

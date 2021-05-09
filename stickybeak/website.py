@@ -1,6 +1,5 @@
 from flask import Flask
 from flask import render_template, request, redirect, url_for, jsonify
-from flask import jsonify
 import os
 import pymysql
 
@@ -29,11 +28,11 @@ def open_connection():
 
     return conn
 
-
+# adding to the db
 def add_emails(email):
     conn = open_connection()
     with conn.cursor() as cursor:
-        cursor.execute('INSERT INTO emails (emails) VALUES(%s)',
+        cursor.execute('INSERT INTO userdetails (email) VALUES(%s)',
                        (email["email"]))
     conn.commit()
     conn.close()
@@ -58,43 +57,21 @@ def story_func():
     return render_template('story.html')
 
 
-if __name__ == "__main__":
-    app.run(host="localhost", port=8080, debug=True)
-
-
 @app.route('/', methods=['POST', 'GET'])
 def emails():
     if request.method == 'POST':
         if not request.is_json:
-            return jsonify({"msg": "Missing JSON in request"}), 400  
+            #  return jsonify({"msg": "Missing JSON in request"}), 400  
+            # sadly, I had to use this sad workaround, it is not connecting to
+            # the database as I hoped.
+            return render_template('newsletter.html')
 
         add_emails(request.get_json())
-        return 'Email Added'
+        return render_template('newsletter.html')
 
     return render_template('newsletter.html')
 
 
-# @app.route('/', methods=['GET', 'POST'])
-# def hello():
-#     if request.method == 'POST':
-#         # Fetch form data
-#         userDetails = request.form
-#         email = userDetails['email']
-#         cur = mysql.connection.cursor()
-#         cur.execute("INSERT INTO users (email) VALUES (%s)", [email])
-#         mysql.connection.commit()
-#         cur.close()
-#         return "success"
-#     return render_template('newsletter.html')
-
-# @app.route('/newsletter')
-# def users():
-#     cur = mysql.connection.cursor()
-#     resultValue = cur.execute("SELECT * FROM users")
-#     if resultValue > 0:
-#         userDetails = cur.fetchall()
-#         return render_template('newsletter.html', userDetails=userDetails)
-
-
 if __name__ == '__main__':
     app.run(debug=True, host='localhost')
+
