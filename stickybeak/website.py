@@ -1,44 +1,61 @@
-from flask import Flask
-from flask import render_template, request, redirect, url_for, jsonify
-from flask import jsonify
+from flask import Flask, render_template, request
+from flask_sqlalchemy import SQLAlchemy
 import os
-import pymysql
 
 app = Flask(__name__)
 
-# configure Flask using environment variables
 app.config.from_pyfile("config.py")
 
+# Thank you for this
+# https://github.com/samlawski/flask-postgres-heroku-demo#-deployment-on-heroku
 
-# db_user = os.environ.get('CLOUD_SQL_USERNAME')
-# db_password = os.environ.get('CLOUD_SQL_PASSWORD')
-# db_name = os.environ.get('CLOUD_SQL_DATABASE_NAME')
-# db_connection_name = os.environ.get('CLOUD_SQL_CONNECTION_NAME')
+# Initialize database
+if os.environ.get('DATABASE_URL'):
+    # Set the database URL from the environment variable if it is set.
+    # The .replace() is a workaround because of a mismatch
+    # between Heroku's default set up and SQLAlchemy
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)
+else:
+    # Use SQLite as a fallback and locally
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 
-
-# def open_connection():
-#     unix_socket = '/cloudsql/{}'.format(db_connection_name)
-#     try:
-#         if os.environ.get('GAE_ENV') == 'standard':
-#             conn = pymysql.connect(user=db_user, password=db_password,
-#                                    unix_socket=unix_socket, db=db_name,
-#                                    cursorclass=pymysql.cursors.DictCursor
-#                                    )
-#     except pymysql.MySQLError as e:
-#         print(e)
-
-#     return conn
+db = SQLAlchemy(app)
 
 
-# def add_emails(email):
-#     conn = open_connection()
-#     with conn.cursor() as cursor:
-#         cursor.execute('INSERT INTO emails (emails) VALUES(%s)',
-#                        (email["email"]))
-#     conn.commit()
-#     conn.close()
+# A basic model for Todos storing some text and the date of creation:
+class Todo(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    content = db.Column(db.String(200), nullable=False)
+
+    def __repr__(self):
+        return '<Task %r>' % self.id
 
 
+# Routes
+@app.route('/signup', methods=['POST', 'GET'])
+def signup_index():
+    if request.method == 'POST':
+        # The POST request is done by the form in the index.html file.
+        # It creates a new todo in the database
+        task_content = request.form['content']
+        new_task = Todo(content=task_content)
+
+        try:
+            # Try to write the new todo in the database:
+            db.session.add(new_task)
+            db.session.commit()
+            return render_template('newsletter.html', page_title="Stickybeak")
+
+        except:
+            return '🤔 The task could not be added'
+    else:
+        # If the request is not POST return the list of ToDos from the
+        # database and render the index.html template
+        tasks = Todo.query.order_by(Todo.date_created).all()
+        return render_template("index.html", tasks=tasks)
+
+
+# PAGES
 @app.route('/')
 def index():
     return render_template('index.html', page_title="Stickybeak")
@@ -47,32 +64,14 @@ def index():
 @app.route('/newsletter', methods=['GET', 'POST'])
 def index_func():
     if request.method == 'POST':
-        return redirect(url_for('newsletter'))
-    return render_template('newsletter.html')
+        return render_template('newsletter.html',
+                               page_title="Stickybeak Newsletter")
 
 
 @app.route('/story', methods=['GET', 'POST'])
 def story_func():
     if request.method == 'POST':
-        return redirect(url_for('story'))
-    return render_template('story.html')
-
-
-# if __name__ == "__main__":
-#     app.run(host="localhost", port=8080, debug=True)
-
-
-# @app.route('/', methods=['POST', 'GET'])
-# def emails():
-#     if request.method == 'POST':
-#         if not request.is_json:
-#             # using this sadly breaks it
-#             return jsonify({"msg": "Missing JSON in request"}), 400  
-
-#         add_emails(request.get_json())
-#         return 'Email Added'
-
-#     return render_template('newsletter.html')
+        return render_template('story.html', page_title="Stickybeak Story")
 
 
 if __name__ == '__main__':
